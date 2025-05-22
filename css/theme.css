@@ -1,0 +1,222 @@
+/* Light Theme */
+.light-theme {
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --text-tertiary: var(--neutral-500);
+  
+  --bg-primary: white;
+  --bg-secondary: var(--neutral-50);
+  --bg-tertiary: var(--neutral-100);
+  
+  --border-color: var(--neutral-200);
+  
+  --card-bg: white;
+  --card-shadow: var(--shadow-md);
+  
+  --header-bg: rgba(255, 255, 255, 0.8);
+  --header-shadow: var(--shadow);
+  
+  --nav-mobile-bg: white;
+  --search-container-bg: white;
+  
+  --btn-primary-bg: var(--primary-600);
+  --btn-primary-text: white;
+  --btn-primary-hover-bg: var(--primary-700);
+  
+  --btn-secondary-bg: var(--neutral-200);
+  --btn-secondary-text: var(--neutral-800);
+  --btn-secondary-hover-bg: var(--neutral-300);
+  
+  --tag-bg: var(--neutral-100);
+  --tag-text: var(--neutral-800);
+  
+  --mission-goal-bg: white;
+  --contact-card-bg: white;
+  
+  --footer-bg: var(--neutral-50);
+  --footer-border: var(--neutral-200);
+  
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+/* Dark Theme */
+.dark-theme {
+  --text-primary: var(--neutral-100);
+  --text-secondary: var(--neutral-300);
+  --text-tertiary: var(--neutral-400);
+  
+  --bg-primary: var(--neutral-900);
+  --bg-secondary: var(--neutral-800);
+  --bg-tertiary: var(--neutral-700);
+  
+  --border-color: var(--neutral-700);
+  
+  --card-bg: var(--neutral-800);
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
+  
+  --header-bg: rgba(17, 24, 39, 0.8);
+  --header-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  
+  --nav-mobile-bg: var(--neutral-800);
+  --search-container-bg: var(--neutral-800);
+  
+  --btn-primary-bg: var(--primary-600);
+  --btn-primary-text: white;
+  --btn-primary-hover-bg: var(--primary-700);
+  
+  --btn-secondary-bg: var(--neutral-700);
+  --btn-secondary-text: var(--neutral-100);
+  --btn-secondary-hover-bg: var(--neutral-600);
+  
+  --tag-bg: var(--neutral-700);
+  --tag-text: var(--neutral-300);
+  
+  --mission-goal-bg: var(--neutral-800);
+  --contact-card-bg: var(--neutral-800);
+  
+  --footer-bg: var(--neutral-900);
+  --footer-border: var(--neutral-800);
+  
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+}
+
+/* Theme-specific elements */
+.header {
+  background-color: var(--header-bg);
+  box-shadow: var(--header-shadow);
+}
+
+.logo:hover {
+  color: var(--primary-600);
+}
+
+.theme-toggle,
+.search-toggle {
+  color: var(--text-primary);
+}
+
+.theme-toggle:hover,
+.search-toggle:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.menu-bar {
+  background-color: var(--text-primary);
+}
+
+.nav-mobile {
+  background-color: var(--nav-mobile-bg);
+  box-shadow: var(--shadow-lg);
+}
+
+.search-container {
+  background-color: var(--search-container-bg);
+  box-shadow: var(--shadow-xl);
+}
+
+.search-input {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.search-button {
+  background-color: var(--primary-600);
+  color: white;
+}
+
+.category-card {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.resource-front,
+.resource-back {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.resource-tag {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+}
+
+.resource-link {
+  color: var(--primary-600);
+}
+
+.resource-link:hover {
+  color: var(--primary-700);
+}
+
+.update-dot {
+  background-color: var(--primary-600);
+  border: 2px solid var(--bg-primary);
+}
+
+.update-tag {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+}
+
+.view-all-btn {
+  background-color: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+}
+
+.view-all-btn:hover {
+  background-color: var(--btn-primary-hover-bg);
+}
+
+.social-link {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+}
+
+.social-link:hover {
+  background-color: var(--primary-600);
+  color: white;
+}
+
+.skill-tag {
+  background-color: var(--tag-bg);
+  color: var(--tag-text);
+}
+
+.mission-goal {
+  background-color: var(--mission-goal-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.contact-card {
+  background-color: var(--contact-card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+.filter-btn {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+}
+
+.filter-btn:hover:not(.active) {
+  background-color: var(--btn-secondary-hover-bg);
+}
+
+.back-link:hover {
+  color: var(--primary-600);
+}
+
+.footer {
+  background-color: var(--footer-bg);
+  border-top: 1px solid var(--footer-border);
+}
+
+/* Theme toggle specific */
+.light-theme .dark-icon {
+  display: none;
+}
+
+.dark-theme .light-icon {
+  display: none;
+}
