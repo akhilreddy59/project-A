@@ -889,7 +889,9 @@ section {
   }
   
   .profile-img-container {
-    margin: 0;
+    width: 255px;
+    height: 133px;
+    object-fit: cover;
   }
   
   .update-timeline::before {
