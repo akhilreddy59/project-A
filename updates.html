@@ -1,133 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Updates and news from the GFG and Programming Club">
-  <title>Updates | Resource Hub</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="css/theme.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" type="image/png" href="images/favicon.png">
-</head>
-<body class="light-theme">
-  <header class="header">
-    <div class="container header-container">
-      <a href="index.html" class="logo">
-        <i class="fa-solid fa-code logo-icon"></i>
-        <span>ResourceHub</span>
-      </a>
-      <nav class="nav-desktop">
-        <ul class="nav-list">
-          <li><a href="index.html" class="nav-link">Home</a></li>
-          <li><a href="updates.html" class="nav-link active">Updates</a></li>
-          <li><a href="about.html" class="nav-link">About</a></li>
-        </ul>
-      </nav>
-      <div class="header-actions">
-        <button class="theme-toggle" aria-label="Toggle dark mode">
-          <i class="fa-solid fa-sun light-icon"></i>
-          <i class="fa-solid fa-moon dark-icon"></i>
-        </button>
-        <button class="search-toggle" aria-label="Search resources">
-          <i class="fa-solid fa-search"></i>
-        </button>
-        <button class="menu-toggle" aria-label="Toggle menu">
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-          <span class="menu-bar"></span>
-        </button>
-      </div>
-    </div>
-  </header>
-  
-  <nav class="nav-mobile">
-    <ul class="nav-list">
-      <li><a href="index.html" class="nav-link">Home</a></li>
-      <li><a href="updates.html" class="nav-link active">Updates</a></li>
-      <li><a href="about.html" class="nav-link">About</a></li>
-    </ul>
-  </nav>
-
-  <div class="search-overlay">
-    <div class="search-container">
-      <div class="search-header">
-        <h2>Search Resources</h2>
-        <button class="search-close" aria-label="Close search">
-          <i class="fa-solid fa-xmark"></i>
-        </button>
-      </div>
-      <div class="search-form">
-        <input type="text" class="search-input" placeholder="Search for resources...">
-        <button class="search-button">
-          <i class="fa-solid fa-search"></i>
-        </button>
-      </div>
-      <div class="search-results"></div>
-    </div>
-  </div>
-
-  <main>
-    <section class="updates-hero">
-      <div class="container">
-        <h1 class="page-title">Updates & Announcements</h1>
-        <p class="page-description">Stay informed about the latest resources, events, and tips from the GFG & Programming Club</p>
-      </div>
-    </section>
-
-    <section class="updates-content">
-      <div class="container">
-        <div class="updates-filter">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="announcement">Announcements</button>
-          <button class="filter-btn" data-filter="resource">New Resources</button>
-          <button class="filter-btn" data-filter="event">Events</button>
-          <button class="filter-btn" data-filter="tip">Tips & Tricks</button>
-        </div>
-        
-        <div class="update-timeline" id="updates-container">
-          <!-- Updates will be dynamically loaded here -->
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-branding">
-          <a href="index.html" class="logo">
-            <i class="fa-solid fa-code logo-icon"></i>
-            <span>ResourceHub</span>
-          </a>
-          <p>project-A</p>
-        </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="updates.html">Updates</a></li>
-            <li><a href="about.html">About</a></li>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Updates and news from the GFG and Programming Club"
+    />
+    <title>Updates | Resource Hub</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/theme.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="icon" type="image/png" href="images/resourcehub_logo.png" />
+  </head>
+  <body class="light-theme">
+    <header class="header">
+      <div class="container header-container">
+        <a href="index.html" class="logo">
+          <i class="fa-solid fa-code logo-icon"></i>
+          <span>ResourceHub</span>
+        </a>
+        <nav class="nav-desktop">
+          <ul class="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="updates.html" class="nav-link active">Updates</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="xtra.html" class="nav-link">Xtra</a></li>
           </ul>
+        </nav>
+        <div class="header-actions">
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fa-solid fa-sun light-icon"></i>
+            <i class="fa-solid fa-moon dark-icon"></i>
+          </button>
+          <button class="search-toggle" aria-label="Search resources">
+            <i class="fa-solid fa-search"></i>
+          </button>
+          <button class="menu-toggle" aria-label="Toggle menu">
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+            <span class="menu-bar"></span>
+          </button>
         </div>
-        <div class="footer-social">
-          <h3>Connect</h3>
-          <div class="social-icons">
-            <a href="https://github.com/akhilreddy59" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
-            <a href="https://linkedin.com/in/akhilkumarreddy09" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="mailto:pesaru.btech2023@spsu.ac.in" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </header>
+
+    <nav class="nav-mobile">
+      <ul class="nav-list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="updates.html" class="nav-link active">Updates</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="xtra.html" class="nav-link">Xtra</a></li>
+      </ul>
+    </nav>
+
+    <div class="search-overlay">
+      <div class="search-container">
+        <div class="search-header">
+          <h2>Search Resources</h2>
+          <button class="search-close" aria-label="Close search">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="search-form">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search for resources..."
+          />
+          <button class="search-button">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </div>
+        <div class="search-results"></div>
+      </div>
+    </div>
+
+    <main>
+      <section class="updates-hero">
+        <div class="container">
+          <h1 class="page-title">Updates & Announcements</h1>
+          <p class="page-description">
+            Stay informed about the latest resources, events, and tips from the
+            GFG & Programming Club
+          </p>
+        </div>
+      </section>
+
+      <section class="updates-content">
+        <div class="container">
+          <div class="updates-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="announcement">
+              Announcements
+            </button>
+            <button class="filter-btn" data-filter="resource">
+              New Resources
+            </button>
+            <button class="filter-btn" data-filter="event">Events</button>
+            <button class="filter-btn" data-filter="tip">Tips & Tricks</button>
+          </div>
+
+          <div class="update-timeline" id="updates-container">
+            <!-- Updates will be dynamically loaded here -->
           </div>
         </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; <span id="copyright-year"></span> ^_^ This webstie is completely made using Ai tools and modified accordingly to get this output .&hearts;</p>
-      </div>
-    </div>
-  </footer>
+      </section>
+    </main>
 
-  <script src="js/data.js"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/updates.js"></script>
-</body>
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-branding">
+            <a href="index.html" class="logo">
+              <i class="fa-solid fa-code logo-icon"></i>
+              <span>ResourceHub</span>
+            </a>
+            <p>project-A</p>
+          </div>
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="updates.html">Updates</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="xtra.html">Xtra</a></li>
+            </ul>
+          </div>
+          <div class="footer-social">
+            <h3>Connect</h3>
+            <div class="social-icons">
+              <a
+                href="https://github.com/akhilreddy59"
+                target="_blank"
+                aria-label="GitHub"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a
+                href="https://linkedin.com/in/akhilkumarreddy09"
+                target="_blank"
+                aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="mailto:pesaru.btech2023@spsu.ac.in" aria-label="Email"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="copyright-year"></span> ^_^ This webstie is
+            completely made using Ai tools and modified accordingly to get this
+            output .&hearts;
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/updates.js"></script>
+  </body>
 </html>

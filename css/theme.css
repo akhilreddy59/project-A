@@ -1,83 +1,84 @@
 /* Light Theme */
 .light-theme {
-  --text-primary: var(--neutral-900);
-  --text-secondary: var(--neutral-600);
-  --text-tertiary: var(--neutral-500);
-  
-  --bg-primary: white;
-  --bg-secondary: var(--neutral-50);
-  --bg-tertiary: var(--neutral-100);
-  
-  --border-color: var(--neutral-200);
-  
-  --card-bg: white;
-  --card-shadow: var(--shadow-md);
-  
-  --header-bg: rgba(255, 255, 255, 0.8);
-  --header-shadow: var(--shadow);
-  
-  --nav-mobile-bg: white;
-  --search-container-bg: white;
-  
+  --text-primary: #0a0a0a;
+  --text-secondary: #333333;
+  --text-tertiary: #555555;
+
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9f9f9;
+  --bg-tertiary: #f0f0f0;
+
+  --border-color: #e0e0e0;
+
+  --card-bg: #fdfdfd;
+  --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  --header-bg: rgba(255, 255, 255, 0.95);
+  --header-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  --nav-mobile-bg: #ffffff;
+  --search-container-bg: #ffffff;
+
   --btn-primary-bg: var(--primary-600);
   --btn-primary-text: white;
   --btn-primary-hover-bg: var(--primary-700);
-  
-  --btn-secondary-bg: var(--neutral-200);
-  --btn-secondary-text: var(--neutral-800);
-  --btn-secondary-hover-bg: var(--neutral-300);
-  
-  --tag-bg: var(--neutral-100);
-  --tag-text: var(--neutral-800);
-  
-  --mission-goal-bg: white;
-  --contact-card-bg: white;
-  
-  --footer-bg: var(--neutral-50);
-  --footer-border: var(--neutral-200);
-  
+
+  --btn-secondary-bg: #e0e0e0;
+  --btn-secondary-text: #222222;
+  --btn-secondary-hover-bg: #d0d0d0;
+
+  --tag-bg: #f2f2f2;
+  --tag-text: #111111;
+
+  --mission-goal-bg: #ffffff;
+  --contact-card-bg: #ffffff;
+
+  --footer-bg: #f9f9f9;
+  --footer-border: #e0e0e0;
+
   color: var(--text-primary);
   background-color: var(--bg-primary);
 }
 
 /* Dark Theme */
 .dark-theme {
-  --text-primary: var(--neutral-100);
-  --text-secondary: var(--neutral-300);
-  --text-tertiary: var(--neutral-400);
-  
-  --bg-primary: var(--neutral-900);
-  --bg-secondary: var(--neutral-800);
-  --bg-tertiary: var(--neutral-700);
-  
-  --border-color: var(--neutral-700);
-  
-  --card-bg: var(--neutral-800);
-  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -4px rgba(0, 0, 0, 0.2);
-  
+  --text-primary: #f5f5f5;
+  --text-secondary: #cccccc;
+  --text-tertiary: #999999;
+
+  --bg-primary: #111111;
+  --bg-secondary: #1c1c1c;
+  --bg-tertiary: #2a2a2a;
+
+  --border-color: #333333;
+
+  --card-bg: #1e1e1e;
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+    0 4px 6px -4px rgba(0, 0, 0, 0.2);
+
   --header-bg: rgba(17, 24, 39, 0.8);
   --header-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
-  
-  --nav-mobile-bg: var(--neutral-800);
-  --search-container-bg: var(--neutral-800);
-  
+
+  --nav-mobile-bg: #1c1c1c;
+  --search-container-bg: #1c1c1c;
+
   --btn-primary-bg: var(--primary-600);
   --btn-primary-text: white;
   --btn-primary-hover-bg: var(--primary-700);
-  
-  --btn-secondary-bg: var(--neutral-700);
-  --btn-secondary-text: var(--neutral-100);
-  --btn-secondary-hover-bg: var(--neutral-600);
-  
-  --tag-bg: var(--neutral-700);
-  --tag-text: var(--neutral-300);
-  
-  --mission-goal-bg: var(--neutral-800);
-  --contact-card-bg: var(--neutral-800);
-  
-  --footer-bg: var(--neutral-900);
-  --footer-border: var(--neutral-800);
-  
+
+  --btn-secondary-bg: #333333;
+  --btn-secondary-text: #f0f0f0;
+  --btn-secondary-hover-bg: #444444;
+
+  --tag-bg: #333333;
+  --tag-text: #cccccc;
+
+  --mission-goal-bg: #1c1c1c;
+  --contact-card-bg: #1c1c1c;
+
+  --footer-bg: #111111;
+  --footer-border: #1a1a1a;
+
   color: var(--text-primary);
   background-color: var(--bg-primary);
 }
@@ -108,12 +109,12 @@
 
 .nav-mobile {
   background-color: var(--nav-mobile-bg);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--card-shadow);
 }
 
 .search-container {
   background-color: var(--search-container-bg);
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--card-shadow);
 }
 
 .search-input {
@@ -122,7 +123,7 @@
 }
 
 .search-button {
-  background-color: var(--primary-600);
+  background-color: var(--btn-primary-bg);
   color: white;
 }
 
