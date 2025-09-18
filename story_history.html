@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Silent Spy: Noor Inayat Khan</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Georgia", serif;
+        overflow-x: hidden;
+        background: #000;
+        color: #fff;
+        scroll-behavior: smooth;
+      }
+
+      /* Landing Page */
+      .hero {
+        height: 100vh;
+        background-image: url("images/Noor Inayat Khan.jpeg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(
+          circle at 50% 50%,
+          transparent 0%,
+          rgba(0, 0, 0, 0.8) 100%
+        );
+      }
+
+      .hero-content {
+        z-index: 2;
+        max-width: 800px;
+        padding: 2rem;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        letter-spacing: 2px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        color: #ccc;
+        font-style: italic;
+      }
+
+      .scroll-indicator {
+        position: absolute;
+        bottom: 5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        color: #fff;
+        cursor: pointer;
+        animation: bounce 2s infinite;
+        z-index: 10;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-5px);
+        }
+      }
+
+      /* Radio Static Effect */
+      .radio-static {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: radial-gradient(
+            circle at 20% 80%,
+            transparent 30%,
+            rgba(255, 255, 255, 0.01) 50%
+          ),
+          radial-gradient(
+            circle at 80% 20%,
+            transparent 30%,
+            rgba(255, 255, 255, 0.01) 50%
+          );
+        animation: staticNoise 3s infinite;
+        pointer-events: none;
+      }
+
+      @keyframes staticNoise {
+        0% {
+          opacity: 0.1;
+        }
+        50% {
+          opacity: 0.05;
+        }
+        100% {
+          opacity: 0.1;
+        }
+      }
+
+      /* Section Styling */
+      .section {
+        min-height: 100vh;
+        padding: 5rem 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .section-content {
+        max-width: 1200px;
+        width: 100%;
+      }
+
+      .section h2 {
+        font-size: 3rem;
+        margin-bottom: 2rem;
+        text-align: center;
+        position: relative;
+      }
+
+      .section h2::after {
+        content: "";
+        width: 100px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #fff, transparent);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .section p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Section Backgrounds */
+      .roots {
+        background: linear-gradient(135deg, #1a1a2e, #16213e);
+      }
+
+      .war-within {
+        background: linear-gradient(135deg, #2d1b69, #11998e);
+      }
+
+      .occupied-france {
+        background: linear-gradient(135deg, #8b0000, #2f1b14);
+        position: relative;
+      }
+
+      .martyrdom {
+        background: linear-gradient(135deg, #000000, #1a1a1a);
+        position: relative;
+      }
+
+      .legacy {
+        background: linear-gradient(135deg, #2c1810, #8b4513, #d4af37);
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        margin: 3rem 0;
+      }
+
+      .timeline-item {
+        display: flex;
+        align-items: center;
+        margin: 2rem 0;
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+
+      .timeline-item.animate {
+        animation: slideIn 1s forwards;
+      }
+
+      @keyframes slideIn {
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .timeline-year {
+        background: #fff;
+        color: #000;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-weight: bold;
+        margin-right: 2rem;
+        min-width: 80px;
+        text-align: center;
+      }
+
+      .timeline-content {
+        flex: 1;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        backdrop-filter: blur(10px);
+      }
+
+      /* Interactive Map */
+      .map-container {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem 0;
+        text-align: center;
+      }
+
+      .route-point {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: #ff6b6b;
+        border-radius: 50%;
+        margin: 0 10px;
+        position: relative;
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(255, 107, 107, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(255, 107, 107, 0);
+        }
+      }
+
+      /* Candle Effect */
+      .candle-container {
+        text-align: center;
+        margin: 3rem 0;
+      }
+
+      .candle {
+        width: 20px;
+        height: 100px;
+        background: linear-gradient(to bottom, #f4e4bc, #d4b896);
+        border-radius: 10px 10px 5px 5px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .flame {
+        width: 20px;
+        height: 30px;
+        background: radial-gradient(circle, #ffa500, #ff4500);
+        border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+        position: absolute;
+        top: -25px;
+        left: 0;
+        animation: flicker 1.5s infinite alternate;
+      }
+
+      @keyframes flicker {
+        0% {
+          transform: scale(1) rotate(-1deg);
+        }
+        50% {
+          transform: scale(1.1) rotate(1deg);
+        }
+        100% {
+          transform: scale(0.95) rotate(-0.5deg);
+        }
+      }
+
+      /* Quote Styling */
+      .quote {
+        font-size: 2rem;
+        font-style: italic;
+        text-align: center;
+        margin: 3rem 0;
+        padding: 2rem;
+        background: rgba(255, 255, 255, 0.1);
+        border-left: 5px solid #fff;
+        position: relative;
+      }
+
+      .quote::before {
+        content: '"';
+        font-size: 4rem;
+        position: absolute;
+        top: -10px;
+        left: 20px;
+        opacity: 0.3;
+      }
+
+      /* Tribute Section */
+      .tribute-form {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 15px;
+        margin: 2rem 0;
+        backdrop-filter: blur(10px);
+      }
+
+      .tribute-form textarea {
+        width: 100%;
+        padding: 1rem;
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        color: #fff;
+        font-family: inherit;
+        font-size: 1rem;
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .tribute-form textarea::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .tribute-form button {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        color: #fff;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 25px;
+        cursor: pointer;
+        font-size: 1rem;
+        margin-top: 1rem;
+        transition: transform 0.3s;
+      }
+
+      .tribute-form button:hover {
+        transform: translateY(-2px);
+      }
+
+      /* Navigation */
+      .nav {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .nav-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.3);
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      .nav-dot.active {
+        background: #fff;
+        transform: scale(1.3);
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+        .section h2 {
+          font-size: 2rem;
+        }
+        .section p {
+          font-size: 1rem;
+        }
+        .timeline-item {
+          flex-direction: column;
+          text-align: center;
+        }
+        .timeline-year {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+        .scroll-indicator {
+          bottom: 3rem;
+        }
+      }
+
+      /* Loading Animation */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 1s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Dots -->
+    <nav class="nav">
+      <div class="nav-dot active" data-section="hero"></div>
+      <div class="nav-dot" data-section="roots"></div>
+      <div class="nav-dot" data-section="war-within"></div>
+      <div class="nav-dot" data-section="occupied-france"></div>
+      <div class="nav-dot" data-section="martyrdom"></div>
+      <div class="nav-dot" data-section="legacy"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="radio-static"></div>
+      <div class="hero-content fade-in">
+        <h1>The Silent Spy</h1>
+        <p class="hero-subtitle">
+          The untold story of Noor Inayat Khan, WWII's wireless warrior
+        </p>
+        <p style="font-size: 1.1rem; opacity: 0.8">
+          A story of courage, sacrifice, and silence that echoes through history
+        </p>
+      </div>
+      <div class="scroll-indicator" onclick="scrollToSection('roots')">
+        <i class="fas fa-chevron-down" style="font-size: 2rem"></i>
+        <p style="margin-top: 0.5rem">Discover her legacy</p>
+      </div>
+    </section>
+
+    <!-- Section 1: Her Roots -->
+    <section class="section roots" id="roots">
+      <div class="section-content fade-in">
+        <h2>Her Roots</h2>
+        <p>
+          Born in Moscow to an Indian Sufi mystic father and American mother,
+          Noor Inayat Khan's early life was steeped in music, poetry, and the
+          principles of nonviolence. Her father, Hazrat Inayat Khan, brought
+          Sufi teachings to the West, raising Noor with deep spiritual values
+          and a belief in the power of peaceful resistance.
+        </p>
+
+        <p>
+          Growing up in Paris, she was educated in both Eastern philosophy and
+          Western literature, becoming fluent in multiple languages. She wrote
+          children's stories and played the harp, embodying the artistic and
+          spiritual heritage of her multicultural upbringing.
+        </p>
+
+        <div class="quote">
+          I wish some Indians would win high military distinction in this war.
+          If one or two could do something in the Allied service which was very
+          brave and which everybody admired it would help to make a bridge
+          between the English people and the Indians.
+        </div>
+
+        <p style="text-align: center; font-style: italic; opacity: 0.8">
+          Her words, spoken as she prepared to serve her adopted country despite
+          her pacifist beliefs.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 2: The War Within -->
+    <section class="section war-within" id="war-within">
+      <div class="section-content fade-in">
+        <h2>The War Within</h2>
+        <p>
+          When Nazi Germany invaded France in 1940, Noor faced an impossible
+          choice. Her Sufi beliefs taught nonviolence, yet she witnessed the
+          destruction of everything she held dear. She made the difficult
+          decision to join the Women's Auxiliary Air Force (WAAF) and later
+          volunteered for the Special Operations Executive (SOE).
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1940</div>
+            <div class="timeline-content">
+              <h3>The Call to Duty</h3>
+              <p>
+                Escapes occupied France with her family, joins the WAAF in
+                Britain
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1943</div>
+            <div class="timeline-content">
+              <h3>SOE Training</h3>
+              <p>
+                Selected and trained as a wireless operator despite instructors'
+                concerns about her gentle nature
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">June 1943</div>
+            <div class="timeline-content">
+              <h3>Code Name: Madeleine</h3>
+              <p>
+                Parachuted into occupied France as the first female wireless
+                operator
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Her superiors questioned whether someone so gentle could survive in
+          occupied territory. They underestimated the steel beneath her
+          spiritual exterior.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 3: In Occupied France -->
+    <section class="section occupied-france" id="occupied-france">
+      <div class="section-content fade-in">
+        <h2>In Occupied France</h2>
+        <p>
+          Operating from Paris under the code name "Madeleine," Noor became the
+          vital link between the French Resistance and London. She transmitted
+          crucial intelligence while constantly evading capture, moving from
+          safe house to safe house with her wireless radio.
+        </p>
+
+        <div class="map-container">
+          <h3 style="margin-bottom: 1rem">Her Secret Routes Through Paris</h3>
+          <div
+            style="
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              flex-wrap: wrap;
+              gap: 20px;
+            "
+          >
+            <span>Grignon</span>
+            <div class="route-point"></div>
+            <span>Paris 16th</span>
+            <div class="route-point"></div>
+            <span>Boulogne</span>
+            <div class="route-point"></div>
+            <span>Neuilly</span>
+          </div>
+          <p style="margin-top: 1rem; font-style: italic">
+            Each point represents a safe house where she transmitted vital
+            intelligence
+          </p>
+        </div>
+
+        <p>
+          For over three months, she successfully evaded the Gestapo while other
+          SOE networks around her crumbled. She refused multiple opportunities
+          to return to safety, stating that her work was too important to
+          abandon.
+        </p>
+
+        <div class="quote">
+          She is the most wanted person in Paris.
+          <br /><span style="font-size: 1rem; opacity: 0.7"
+            >— German intelligence reports, October 1943</span
+          >
+        </div>
+
+        <p>
+          On October 13, 1943, she was betrayed by a double agent and captured.
+          Even then, she nearly escaped from her captors before being
+          recaptured.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 4: Martyrdom and Memory -->
+    <section class="section martyrdom" id="martyrdom">
+      <div class="section-content fade-in">
+        <h2>Martyrdom & Memory</h2>
+
+        <div class="candle-container">
+          <div class="candle">
+            <div class="flame"></div>
+          </div>
+          <p style="margin-top: 2rem; font-style: italic">
+            In memory of the silent warrior
+          </p>
+        </div>
+
+        <p>
+          Despite months of torture and interrogation, Noor revealed nothing.
+          She was classified as "highly dangerous" and kept in solitary
+          confinement. Her captors tried everything to break her spirit, but she
+          remained silent, protecting her comrades and her mission.
+        </p>
+
+        <p>
+          On September 13, 1944, she was transported to Dachau concentration
+          camp. At dawn, she and three other female SOE agents were executed.
+          Witnesses reported that her final word was "Liberté" – Liberty.
+        </p>
+
+        <div
+          class="quote"
+          style="background: rgba(0, 0, 0, 0.5); border-left-color: #ff6b6b"
+        >
+          Liberté
+          <br /><span style="font-size: 1rem; opacity: 0.7"
+            >— Her final word, September 13, 1944</span
+          >
+        </div>
+
+        <p>
+          Posthumously awarded the George Cross, Britain's highest civilian
+          decoration for gallantry, and the Croix de Guerre by France. She was
+          30 years old.
+        </p>
+      </div>
+    </section>
+
+    <!-- Section 5: Legacy & Reflection -->
+    <section class="section legacy" id="legacy">
+      <div class="section-content fade-in">
+        <h2>Legacy & Reflection</h2>
+        <p>
+          Today, Noor Inayat Khan is remembered through memorials in London,
+          statues in her honor, and books that finally tell her story. Yet for
+          decades, her sacrifice remained largely unknown – a pattern too common
+          for women of color in history.
+        </p>
+
+        <p>
+          Her story challenges us to ask: How many other heroes have been
+          forgotten? How many stories of courage remain untold because they
+          don't fit the traditional narratives of who gets to be remembered as a
+          hero?
+        </p>
+
+        <div class="tribute-form">
+          <h3 style="margin-bottom: 1rem">Share a Reflection</h3>
+          <p style="margin-bottom: 1rem; font-size: 1rem">
+            Whose stories from history deserve to be better known? What can we
+            learn from Noor's courage?
+          </p>
+          <textarea
+            id="tributeText"
+            placeholder="Share your thoughts about untold stories of courage..."
+          ></textarea>
+          <button onclick="submitTribute()">Share Reflection</button>
+          <div
+            id="tributeResponse"
+            style="margin-top: 1rem; font-style: italic; opacity: 0.8"
+          ></div>
+        </div>
+
+        <div class="quote" style="background: rgba(255, 255, 255, 0.1)">
+          She was a woman of great courage who gave her life for the freedom of
+          others. Her story reminds us that heroism comes in many forms, and
+          true bravery often operates in silence.
+        </div>
+
+        <p style="text-align: center; font-style: italic; margin-top: 3rem">
+          The silent spy's voice echoes through history, reminding us that some
+          battles are won not through violence, but through unwavering moral
+          courage.
+        </p>
+      </div>
+    </section>
+
+    <script>
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px",
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+          }
+        });
+      }, observerOptions);
+
+      // Observe all fade-in elements
+      document.querySelectorAll(".fade-in").forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Timeline animation
+      const timelineObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const items = entry.target.querySelectorAll(".timeline-item");
+            items.forEach((item, index) => {
+              setTimeout(() => {
+                item.classList.add("animate");
+              }, index * 300);
+            });
+          }
+        });
+      }, observerOptions);
+
+      const timeline = document.querySelector(".timeline");
+      if (timeline) {
+        timelineObserver.observe(timeline);
+      }
+
+      // Navigation functionality
+      function scrollToSection(sectionId) {
+        document.getElementById(sectionId).scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+
+      // Update active navigation dot
+      window.addEventListener("scroll", () => {
+        const sections = [
+          "hero",
+          "roots",
+          "war-within",
+          "occupied-france",
+          "martyrdom",
+          "legacy",
+        ];
+        const scrollPos = window.scrollY + window.innerHeight / 2;
+
+        sections.forEach((section) => {
+          const element = document.getElementById(section);
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+
+          if (scrollPos >= offsetTop && scrollPos < offsetBottom) {
+            document.querySelectorAll(".nav-dot").forEach((dot) => {
+              dot.classList.remove("active");
+            });
+            document
+              .querySelector(`[data-section="${section}"]`)
+              .classList.add("active");
+          }
+        });
+      });
+
+      // Navigation dot click handlers
+      document.querySelectorAll(".nav-dot").forEach((dot) => {
+        dot.addEventListener("click", () => {
+          const section = dot.getAttribute("data-section");
+          scrollToSection(section);
+        });
+      });
+
+      // Tribute form functionality
+      function submitTribute() {
+        const textarea = document.getElementById("tributeText");
+        const response = document.getElementById("tributeResponse");
+        const text = textarea.value.trim();
+
+        if (text) {
+          response.innerHTML =
+            "Thank you for sharing your reflection. Stories like these help ensure that heroes like Noor are never forgotten.";
+          textarea.value = "";
+        } else {
+          response.innerHTML = "Please share your thoughts before submitting.";
+        }
+      }
+
+      // Add some dynamic effects
+      window.addEventListener("load", () => {
+        // Animate hero content
+        setTimeout(() => {
+          document.querySelector(".hero-content").classList.add("visible");
+        }, 500);
+      });
+
+      // Enhanced scroll experience
+      let ticking = false;
+      function updateScrollEffects() {
+        const scrolled = window.pageYOffset;
+        const parallax = document.querySelector(".hero");
+        if (parallax) {
+          parallax.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+        ticking = false;
+      }
+
+      window.addEventListener("scroll", () => {
+        if (!ticking) {
+          requestAnimationFrame(updateScrollEffects);
+          ticking = true;
+        }
+      });
+    </script>
+  </body>
+</html>
