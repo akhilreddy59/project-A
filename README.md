@@ -3,6 +3,8 @@
 Project-A is a multipage **web application** built with **HTML, CSS, JavaScript, Tailwind CSS, and Vite**.  
 It demonstrates responsive design, modular structure, and modern frontend tooling — making it a great foundation for scalable projects.
 
+# Live project link
+[Visit the site](https://resourcehub-ar.netlify.app/)
 ---
 
 ## ✨ Features
